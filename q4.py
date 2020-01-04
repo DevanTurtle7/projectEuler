@@ -1,16 +1,18 @@
 # DOES NOT WORK
 # Issues:
-#   - The current solution finds the first answer with the biggest multiples, not biggest value
-#       Ex: The solution is in the low 900s. My algorithm will be satisfied before it finds this solution
-#   - I don't need to be iterating through every number, just the 3 digit ones
-# I should probably work backwords from the palindrome
+#   - Doesn't account for ODD numbered palindromes
 
 def palindrome():
-    x = 999
-    while True:
-        for y in range(999, x,-1):
-            if str(x*y) == str(x*y)[::-1]:
-                return x*y
-        x -= 1
+    x = 0
+    m = str(999**2)
+
+    for i in range(int(m[0:int(len(m)/2)]), 99, -1):
+        k = int(str(i) + str(i)[::-1])
+
+        if k < int(m):
+            for j in range(999, 99, -1):
+                if k % j == 0 and len(str(k/j)) == 3:
+                    print(j)
+                    return k
 
 print(palindrome())
