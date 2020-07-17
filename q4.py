@@ -1,18 +1,22 @@
-# DOES NOT WORK
-# Issues:
-#   - Doesn't account for ODD numbered palindromes
+#myString = str(input())
 
-def palindrome():
-    x = 0
-    m = str(999**2)
+def isPalindrome(s):
+    l = len(s)
+    i1=i2=int()
 
-    for i in range(int(m[0:int(len(m)/2)]), 99, -1):
-        k = int(str(i) + str(i)[::-1])
+    if l % 2 == 1:
+        i1 = int((l - 1) / 2)
+        i2 = int((l + 1) / 2)
+    else:
+        i1=i2=int(l/2)
 
-        if k < int(m):
-            for j in range(999, 99, -1):
-                if k % j == 0 and len(str(k/j)) == 3:
-                    print(j)
-                    return k
+    if s[0:i1] == s[i2:l][::-1]:
+            return True
+    
+    return False
 
-print(palindrome())
+#print(isPalindrome(myString))
+
+#work backwards
+#find the largest palindromes and then find its factors.
+#if the factors are 2 3-digit numbers than shes a go.
