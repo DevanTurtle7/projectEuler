@@ -1,5 +1,0 @@
-def isPalindrome(s):
-    if len(s) % 2 == 1: #odd
-        print('hehoo')
-    else:
-        print(s[0:len(s)/2])
