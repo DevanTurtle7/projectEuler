@@ -10,7 +10,8 @@ public class NthPrime {
     public NthPrime(int target) {
         this.target = target;
         this.primes = new ArrayList<>();
-        for (int i = 2; i < 4; i++) {primes.add(i);};
+        primes.add(2);
+        primes.add(3);
 
         generateSieve();
     }
