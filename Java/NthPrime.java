@@ -3,11 +3,11 @@ package Java;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sieve {
+public class NthPrime {
     private int target;
     private List<Integer> primes;
 
-    public Sieve(int target) {
+    public NthPrime(int target) {
         this.target = target;
         this.primes = new ArrayList<>();
         for (int i = 2; i < 4; i++) {primes.add(i);};
@@ -37,6 +37,7 @@ public class Sieve {
     }
 
     public int getTarget() {
-        return this.primes.get(this.primes.size() - 1);
+        int lastIndex = this.primes.size() - 1;
+        return this.primes.get(lastIndex);
     }
 }
